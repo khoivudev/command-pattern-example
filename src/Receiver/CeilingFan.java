@@ -1,20 +1,20 @@
 package Receiver;
 
-public class Light {
+public class CeilingFan {
     boolean status = false;
     String location;
     
-    public Light(String location) {
+    public CeilingFan(String location) {
         this.location = location;
     }
 
     public void on() {
-        System.out.println("Light in " + location + " is on");
+        System.out.println("CeilingFan in " + location + " is on");
         this.status = true;
     }
 
     public void off() {
-        System.out.println("Light in " + location + " is off");
+        System.out.println("CeilingFan in " + location + " is off");
         this.status = false;
     }
 

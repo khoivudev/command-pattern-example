@@ -25,10 +25,12 @@ public class GarageDoor {
     }
 
     public void open() {
+        System.out.println("GarageDoor is open");
         this.position = OPEN_POSITION;
     }
 
     public void close() {
+        System.out.println("GarageDoor is close");
         this.position = CLOSE_POSITION;
     }
 

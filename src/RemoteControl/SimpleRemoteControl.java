@@ -1,4 +1,4 @@
-package Client;
+package RemoteControl;
 
 import Command.*;
 public class SimpleRemoteControl {
