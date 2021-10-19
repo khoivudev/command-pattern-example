@@ -1,0 +1,30 @@
+@startuml
+class RemoteLoader
+
+package Command {
+    interface Command
+    class LightOffCommand implements Command
+    class LightOnCommand implements Command
+}
+
+package Receiver {
+    class Light
+}
+
+Light <-- LightOffCommand
+Light <-- LightOnCommand
+
+class RemoteControl {
+    onCommands
+    offCommands
+    setCommand()
+    onButtonWasPushed()
+    offButtonWasPushed()
+}
+
+RemoteControl --> Command
+RemoteLoader --> Light
+RemoteLoader --> LightOffCommand
+RemoteLoader --> LightOnCommand
+
+@enduml

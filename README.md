@@ -1,9 +1,7 @@
 # THE COMMAND PATTERN
 * Implement meta command Pattern
   * The Meta Command Pattern allows creating macros of commands
-  * Can execute multiple commands at once. 
-## Note
 
 ## Class diagram
 
-![alt_image]()
+![alt_image](https://github.com/khoivudev/command-pattern-example/blob/remote-control-v3/design/class_diagram.png)
