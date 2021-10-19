@@ -1,24 +1,39 @@
 package Receiver;
 
 public class CeilingFan {
-    boolean status = false;
+    public final static int HIGH = 3;
+    public final static int MEDIUM = 2;
+    public final static int LOW = 1;
+    public final static int OFF = 0;
     String location;
-    
+    int speed;
+
     public CeilingFan(String location) {
         this.location = location;
+        speed = OFF;
     }
 
-    public void on() {
-        System.out.println("CeilingFan in " + location + " is on");
-        this.status = true;
+    public void high() {
+        System.out.println("CeilingFan speed " + location + " high");
+        speed = HIGH;
+    }
+
+    public void medium() {
+        System.out.println("CeilingFan speed " + location + " medium");
+        speed = MEDIUM;
+    }
+
+    public void low() {
+        System.out.println("CeilingFan speed " + location + " low");
+        speed = LOW;
     }
 
     public void off() {
         System.out.println("CeilingFan in " + location + " is off");
-        this.status = false;
+        this.speed = OFF;
     }
 
-    public boolean getStatus() {
-        return this.status;
+    public int getSpeed() {
+        return this.speed;
     }
 }

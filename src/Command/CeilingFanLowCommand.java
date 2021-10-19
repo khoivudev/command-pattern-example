@@ -2,14 +2,14 @@ package Command;
 
 import Receiver.CeilingFan;
 
-public class CeilingFanOffCommand extends CeilingFanCommand {
+public class CeilingFanLowCommand extends CeilingFanCommand {
     
-    public CeilingFanOffCommand(CeilingFan ceilingFan) {
+    public CeilingFanLowCommand(CeilingFan ceilingFan) {
        super(ceilingFan);
     }
 
     public void execute() {
         super.execute();
-        ceilingFan.off();
+        ceilingFan.low();
     }
 }
