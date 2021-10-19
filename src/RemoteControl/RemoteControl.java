@@ -1,10 +1,12 @@
 package RemoteControl;
+
 import Command.*;
+import java.util.*;
 
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
-    Command undoCommand;
+    Stack<Command> undoCommands = new Stack<>();
 
     public RemoteControl() {
         onCommands = new Command[7];
@@ -15,7 +17,6 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
-        undoCommand = noCommand;
     }
 
     public void setCommand(int slot, Command onCommand, Command offCommand) {
@@ -25,16 +26,21 @@ public class RemoteControl {
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
-        undoCommand = offCommands[slot];
+        undoCommands.push(offCommands[slot]);
     }
 
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
-        undoCommand = onCommands[slot];
+        undoCommands.push(onCommands[slot]);
     }
 
     public void undoButtonWasPushed() {
-        undoCommand.undo();
+        try {
+            Command undoCommand = undoCommands.pop();
+            undoCommand.undo();
+        } catch(EmptyStackException e) {
+            System.out.println("No command to undo");
+        }
     }
 
     public String toString() {

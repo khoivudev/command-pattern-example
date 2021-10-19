@@ -84,10 +84,9 @@ public class RemoteLoader {
         remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
 
         System.out.println(remoteControl);
-
+        System.out.println(livingRoomLight.getStatus());
         remoteControl.onButtonWasPushed(0);
         remoteControl.offButtonWasPushed(0);
-        remoteControl.undoButtonWasPushed();
         remoteControl.onButtonWasPushed(1);
         remoteControl.offButtonWasPushed(1);
         remoteControl.undoButtonWasPushed();

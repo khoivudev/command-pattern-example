@@ -3,7 +3,7 @@ package Receiver;
 public class Light {
     boolean status = false;
     String location;
-    
+
     public Light(String location) {
         this.location = location;
     }
